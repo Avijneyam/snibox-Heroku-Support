@@ -1,0 +1,31 @@
+{
+  "name": "Snibox",
+  "description": "Self-hosted snippet manager.",
+  "website": "https://github.com/Avijneyam/snibox-Heroku-Support",
+  "repository": "https://github.com/Avijneyam/snibox-Heroku-Support",
+  "logo": "https://cdn-icons-png.flaticon.com/512/3209/3209265.png",
+  "success_url": "/register",
+  "stack":"heroku-18",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "FORCE_SSL": "true"
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
